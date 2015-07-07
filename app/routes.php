@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/','AsittedController@index');
+
+Route::get('/materiaPrima','AsittedController@materiaPrima');
+Route::get('/productoTerminado','AsittedController@productoTerminado');

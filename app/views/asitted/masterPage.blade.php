@@ -4,10 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ASITTED</title>
-    <link rel="stylesheet" href="css/foundation.css" />
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/importer.css" />
-    <script src="js/vendor/modernizr.js"></script>
+    <link rel="stylesheet" href="{{URL::asset('assets/css/foundation.css')}}" />
+    <link rel="stylesheet" href="{{URL::asset('assets/css/icomoon.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('assets/css/importer.css')}}" />
+    <script src="{{URL::asset('assets/js/vendor/modernizr.js')}}"></script>
   </head>
   <body>
     <div class="fixed">
@@ -27,8 +27,8 @@
             <li class="has-dropdown">
               <a href="#">Inventario</a>
               <ul class="dropdown">
-                <li><a href="#"> Materia Prima</a></li>
-                <li><a href="#">Productos Terminados</a></li>
+                <li><a href="{{ URL::to('/materiaPrima') }}"> Materia Prima</a></li>
+                <li><a href="{{ URL::to('/productoTerminado') }}">Productos Terminados</a></li>
               </ul>
             </li>
           </ul>
@@ -41,8 +41,8 @@
 
 
 
-    <script src="js/vendor/jquery.js"></script>
-    <script src="js/foundation.min.js"></script>
+    <script src="{{URL::asset('assets/js/vendor/jquery.js')}}"></script>
+    <script src="{{URL::asset('assets/js/foundation.min.js')}}"></script>
     <script>
       $(document).foundation();
     </script>

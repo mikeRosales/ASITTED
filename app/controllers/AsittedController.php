@@ -10,7 +10,7 @@ class AsittedController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		return View::make('asitted.masterPage');
 	}
 
 	/**
@@ -83,4 +83,11 @@ class AsittedController extends \BaseController {
 		//
 	}
 
+	public function materiaPrima(){
+		return View::make('asitted.inventarioMateriaPrima');
+	}
+
+	public function productoTerminado(){
+		return View::make('asitted.inventarioProductoTerminado');
+	}
 }
