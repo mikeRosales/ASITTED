@@ -18,8 +18,8 @@ class CreateProductosTerminadosTable extends Migration {
 
 			$table->integer('num_bolsa');
         	$table->integer('num_bulto');
-        	$table->enum('choices', array('chamarra', 'pantalon'));
-            $table->string('apellido_materno', 100);
+        	$table->enum('tipo', array('chamarra', 'pantalon'));
+            $table->string('nombre', 100);
             $table->string('talla', 20);
             $table->integer('cantidad');
             $table->integer('id_taller')->unsigned();            

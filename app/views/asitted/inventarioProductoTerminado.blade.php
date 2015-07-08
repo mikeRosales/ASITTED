@@ -39,18 +39,21 @@
           </tr>                              
         </thead>
         <tbody> 
-            <tr class="openModal" data-reveal-id="popDetalles">                    
-              <td>Telas Pocho hechas</td>
-              <td>Taller 1</td>
-              <td>Camisa polo</td>                  
-              <td>Mediana</td>                  
-              <td>100</td>                  
-            </tr>                
+            @foreach($productos as $key => $value)
+            <tr class="openModal" data-reveal-id="{{$value->nombre}}">                    
+              <td>{{ $value->nombre }}</td>
+              <td>{{ $value->id_taller }}</td>
+              <td>{{ $value->tipo }}</td>                  
+              <td>{{ $value->talla }}</td>                  
+              <td>{{ $value->cantidad }}</td>                  
+            </tr>   
+            @endforeach             
         </tbody>
       </table>
     </div>
   </div>
-  <div id="popDetalles" class="reveal-modal reveal-custom medium" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+     @foreach($productos as $key => $value)
+  <div id="{{$value->nombre}}" class="reveal-modal reveal-custom medium" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
     <section class="pop-head">
       <label>Detalle del Elemento</label>
     </section>
@@ -68,11 +71,11 @@
         </thead>
         <tbody> 
             <tr>                    
-              <td>Telas Pocho hechas</td>
-              <td>Taller 1</td>
-              <td>2</td>                  
-              <td>3</td>                  
-              <td>12/04/2015</td>                  
+              <td>{{ $value->nombre }}</td>
+              <td>{{ $value->id_taller }}</td>
+              <td>{{ $value->num_bolsa }}</td>                  
+              <td>{{ $value->num_bulto }}</td>                  
+              <td>{{ $value->created_at }}</td>                  
             </tr>                
         </tbody>
       </table>
@@ -80,6 +83,7 @@
     </section>         
     <a class="close-reveal-modal close-reveal-custom" aria-label="Close">&#215;</a>
   </div>
+      @endforeach  
 </section>
 
     <script src="{{URL::asset('assets/js/vendor/jquery.js')}}"></script>

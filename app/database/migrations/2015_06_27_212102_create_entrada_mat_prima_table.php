@@ -16,7 +16,7 @@ class CreateEntradaMatPrimaTable extends Migration {
 		{
 			$table->increments('id_item');
 
-			$table->integer('item');
+			$table->string('nombre', 100);
 			$table->integer('unidad');
 			$table->integer('cantidad');
             $table->string('descripcion', 255);

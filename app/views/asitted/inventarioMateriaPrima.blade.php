@@ -29,22 +29,26 @@
           </tr>                              
         </thead>
         <tbody> 
-            <tr class="openModal" data-reveal-id="popDetalles">                    
-              <td>Telas Pocho</td>
-              <td>pz</td>
-              <td>20</td>                  
+        @foreach($materia as $key => $value)
+            <tr class="openModal" data-reveal-id="{{$value->nombre}}">                    
+              <td>{{ $value->nombre }}</td>
+              <td>{{ $value->unidad }}</td>
+              <td>{{ $value->cantidad }}</td>                  
             </tr>                
+        @endforeach
         </tbody>
       </table>
     </div>
   </div>
-  <div id="popDetalles" class="reveal-modal reveal-custom medium" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  @foreach($materia as $key => $value)
+  <div id="{{ $value->nombre }}" class="reveal-modal reveal-custom medium" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+     
     <section class="pop-head">
       <label>Detalle del Elemento</label>
     </section>
     <section class="pop-body gvDetalles">
       <table class="table-custom">
-        <thead>              
+        <thead> 
           <tr class="titulo" >
             <th><span>Nombre</span></th>
             <th><span>Cantidad</span></th>
@@ -53,14 +57,22 @@
           </tr>                              
         </thead>
         <tbody> 
+
             <tr>                                          
-            
-            </tr>                
+              <td>{{ $value->nombre }}</td>
+              <td>{{ $value->cantidad }}</td>
+              <td>{{ $value->descripcion }}</td>
+              <td>{{ $value->observaciones }}</td>
+            </tr>  
+                      
         </tbody>
       </table>
     </section>         
     <a class="close-reveal-modal close-reveal-custom" aria-label="Close">&#215;</a>
+
   </div>
+    @endforeach
+ 
 </section>
     <script src="{{URL::asset('assets/js/vendor/jquery.js')}}"></script>
     <script src="{{URL::asset('assets/js/foundation.min.js')}}"></script>

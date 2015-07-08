@@ -84,10 +84,12 @@ class AsittedController extends \BaseController {
 	}
 
 	public function materiaPrima(){
-		return View::make('asitted.inventarioMateriaPrima');
+		$materia = RecepcionMatPrima::All();
+		return View::make('asitted.inventarioMateriaPrima')->with('materia',$materia);
 	}
 
 	public function productoTerminado(){
-		return View::make('asitted.inventarioProductoTerminado');
+		$producto = ProductosTerminados::All();
+		return View::make('asitted.inventarioProductoTerminado')->with('productos',$producto);
 	}
 }
