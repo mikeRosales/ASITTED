@@ -15,3 +15,5 @@ Route::get('/','AsittedController@index');
 
 Route::get('/materiaPrima','AsittedController@materiaPrima');
 Route::get('/productoTerminado','AsittedController@productoTerminado');
+Route::get('/regProdTerminado','AsittedController@regProdTerminado');
+Route::get('/regMatPrima','AsittedController@regMatPrima');

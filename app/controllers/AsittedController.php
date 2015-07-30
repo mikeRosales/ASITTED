@@ -10,7 +10,7 @@ class AsittedController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('asitted.masterPage');
+		return View::make('asitted.login');
 	}
 
 	/**
@@ -91,5 +91,12 @@ class AsittedController extends \BaseController {
 	public function productoTerminado(){
 		$producto = ProductosTerminados::All();
 		return View::make('asitted.inventarioProductoTerminado')->with('productos',$producto);
+	}
+
+	public function regMatPrima(){
+		return View::make('asitted.registroMateriaPrima');
+	}
+	public function regProdTerminado(){
+		return View::make('asitted.registroProductoTerminado');
 	}
 }
