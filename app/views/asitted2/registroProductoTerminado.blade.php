@@ -1,4 +1,4 @@
-@include('asitted.recursos')
+@include('asitted2.recursos')
  @if($errors->has())
    @foreach ($errors->all() as $error)
       <div><small class="error">{{ $error }}</small></div>

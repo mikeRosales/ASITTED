@@ -20,6 +20,9 @@ class SessionController extends \BaseController {
 				
 				return Redirect::action('AsittedController@index');
 			}
+			elseif($nivel==2){
+				return Redirect::action('Asitted2Controller@index');
+			}
 		}
 		return Redirect::back()->with('error_message', 'Datos incorrectos, vuelve a intentarlo.');
 	}
@@ -41,6 +44,9 @@ class SessionController extends \BaseController {
 			$nivel=Auth::user()->id_nivel_acceso;;
 			if ($nivel==1) {
 				return Redirect::action('AsittedController@index');
+			}
+			elseif($nivel==2){
+				return Redirect::action('Asitted2Controller@index');
 			}
 		}else{
 			return View::make('login');

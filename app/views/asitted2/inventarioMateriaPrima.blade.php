@@ -1,4 +1,4 @@
-@include('asitted.recursos')
+@include('asitted2.recursos')
 <!doctype html>
 <html class="no-js" lang="en">
   <head>

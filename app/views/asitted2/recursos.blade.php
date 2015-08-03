@@ -27,26 +27,13 @@
                 <li><a href="{{ URL::to('/materiaPrima') }}">Almacen de Materia Prima</a></li>
                 <li><a href="{{ URL::to('/productoTerminado') }}">Almacen de Productos Terminados</a></li>
                 <li><a href="{{ URL::to('/registroMateriaPrima') }}">Nuevos Insumos</a></li>
-				<li><a href="{{ URL::to('/registroProductoTerminado') }}">Nuevos Productos Terminados</a></li>
+				        <li><a href="{{ URL::to('/registroProductoTerminado') }}">Nuevos Productos Terminados</a></li>
               </ul>
-            </li>
-            <li class="has-dropdown">
-              <a href="#">Salidas</a>
-              <ul class="dropdown">
-                <li><a href="{{ URL::to('/salidaMateriaPrima') }}">Salida de Materia Prima</a></li>
-                <li><a href="{{ URL::to('/empaquePorEnviar') }}">Enviar Producto Terminado</a></li>
-              </ul>
-            </li>
-            <li class="has-dropdown">
-              <a href="#">Talleres</a>
-              <ul class="dropdown">
-                <li><a href="{{ URL::to('/registroTaller') }}">Registrar Nuevo Taller</a></li>
-                
-              </ul>
-            </li>
+            </li>                    
           </ul>
            <ul class="right">
            <li class="name"><a>Bienvenido {{Session::get('nombre')}}</a></li>
+           <li><a href="{{ URL::to('/logout') }}">Cerrar Sesion</a></li>
            </ul>
         </section>
       </nav>

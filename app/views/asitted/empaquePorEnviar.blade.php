@@ -1,6 +1,17 @@
 @include('asitted.recursos')
+ @if($errors->has())
+   @foreach ($errors->all() as $error)
+      <div><small class="error">{{ $error }}</small></div>
+  @endforeach
+@endif
+@if(Session::has('success'))
+    <div class="alert-box">
+       <small> {{ Session::get('success') }}</small>
+    </div>
+@endif
 <section id="empaquexEnviar">
 	<div class="row">
+	 {{ Form::open(array('url' => '/envioProductoTerminado')) }}
 	    <div class="small-12 columns">
 	      <label>
 	        <br/>
@@ -14,63 +25,56 @@
 	      <div class="small-6 columns">
 	        <label>
 	          Corte
-	          <select>
-	            <option>Corte 1</option>
-	            <option>Corte 2</option>
-	            <option>Corte 3</option>
-	          </select>
+	        <input type="text" name="corte" placeholder="Corte"/>
 	        </label>
 	      </div>
 	      <div class="small-6 columns">
 	        <label>
 	          Talla
-	          <select>
-	            <option>CH</option>
-	            <option>M</option>
-	            <option>G</option>
-	          </select>
+	          <select name="talla">
+	            <option value="CH">CH</option>
+	            <option value="M">M</option>
+	            <option value="G">G</option>
+         	 </select>
 	        </label>
 	      </div>
 	      <div class="small-6 columns">
 	        <label>
 	          Paquetes
-	          <input type="text" placeholder="Paquetes"/>
+	          <input type="text" name="paquetes" placeholder="Paquetes"/>
 	        </label>
 	      </div>
 	      <div class="small-6 columns">
 	        <label>
 	          Taller
-	          <select>
-	            <option>Taller 1</option>
-	            <option>Taller 2</option>
-	            <option>Taller 3</option>
-	          </select>
+	          {{ Form::select('taller', $talleres, $selected) }}
 	        </label>
 	      </div>
 	      <div class="small-6 columns">
 	        <label>
 	          Cajas por Corte
-	          <input type="text" placeholder="Paquetes"/>
+	          <input type="text" name="cajas" placeholder="Paquetes"/>
 	        </label>
 	      </div>
 	      <div class="small-6 columns">
 	        <label>
 	          Color
-	          <select>
-	            <option>Color 1</option>
-	            <option>Color 2</option>
-	            <option>Color 3</option>
+	          <select name="color">
+	            <option value="Guinda">Guinda</option>
+	            <option value="Verde">Verde</option>
+	            <option value="Gris">Gris</option>
 	          </select>
 	        </label>
 	      </div>
 	      <div class="small-12 columns">
 	        <label>
 	          Observaciones
-	          <textarea></textarea>
+	          <textarea name="observaciones"></textarea>
 	        </label>
 	      </div>
 	      <div class="small-12 columns">
 	        <button class="button succes">Aceptar</button>
 	      </div>
+	      {{ Form::close() }}
 	   </div>
 </section>

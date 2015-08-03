@@ -1,6 +1,18 @@
 @include('asitted.recursos')
+ @if($errors->has())
+   @foreach ($errors->all() as $error)
+      <div><small class="error">{{ $error }}</small></div>
+  @endforeach
+@endif
+@if(Session::has('success'))
+    <div class="alert-box">
+       <small> {{ Session::get('success') }}</small>
+    </div>
+@endif
+
 <section id="salidaMateriaPrima">
 	<div class="row">
+     {{ Form::open(array('url' => '/salidaMateriaPrima')) }}
         <div class="small-12 columns">
           <label>
             <br/>
@@ -14,67 +26,63 @@
           <div class="small-6 columns">
             <label>
               Taller
-              <select>
-                <option>Taller 1</option>
-                <option>Taller 2</option>
-                <option>Taller 3</option>
-              </select>
+             {{ Form::select('taller', $talleres, $selected) }}
             </label>
           </div>
           <div class="small-6 columns">
             <label>
               Via Envio
-              <select>
-                <option>Via 1</option>
-                <option>Via 2</option>
-                <option>Via 3</option>
+              <select name="via_envio">
+                <option value="Camion">Camion</option>
+                <option value="Tren">Tren</option>                
               </select>
             </label>
           </div>
           <div class="small-6 columns">
             <label>
               Producto
-              <input type="text" placeholder="Producto"/>
+              <input type="text" name="producto" placeholder="Producto"/>
             </label>
           </div>
           <div class="small-6 columns">
             <label>
               Cajas por Corte
-              <input type="text" placeholder="Paquetes"/>
+              <input type="text" name="cajas" placeholder="Paquetes"/>
             </label>
           </div>
           <div class="small-6 columns">
             <label>
               Unidad
-              <input type="text" placeholder="Unidad"/>
+              <input type="text" name="unidad" placeholder="Unidad"/>
             </label>
           </div>
           <div class="small-6 columns">
             <label>
               Cantidad
-              <input type="text" placeholder="Cantidad"/>
+              <input type="text" name="cantidad" placeholder="Cantidad"/>
             </label>
           </div>
           <div class="small-6 columns">
             <label>
               Descripción
-              <input type="text" placeholder="Descripción"/>
+              <input type="text" name="descripcion" placeholder="Descripción"/>
             </label>
           </div>
           <div class="small-6 columns">
             <label>
               Corte
-              <input type="text" placeholder="Corte"/>
+              <input type="text" name="corte" placeholder="Corte"/>
             </label>
           </div>
           <div class="small-12 columns">
             <label>
               Observaciones
-              <textarea></textarea>
+              <textarea name="observaciones"></textarea>
             </label>
           </div>
           <div class="small-12 columns">
             <button class="button succes">Aceptar</button>
           </div>
+           {{ Form::close() }}
       </div>
 </section>
