@@ -14,7 +14,7 @@ class CreateTalleresTable extends Migration {
 	{
 		Schema::create('talleres', function(Blueprint $table)
 		{
-			$table->increments('id_taller');
+			$table->increments('id');
 			$table->string('nombre_taller', 100);
 		});
 	}

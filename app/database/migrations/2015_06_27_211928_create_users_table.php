@@ -14,16 +14,20 @@ class CreateUsuariosTable extends Migration {
 	{
 		 Schema::create('usuarios', function(Blueprint $table)
 		 {
-            $table->increments('id_usuario');
+            $table->increments('id');
 
             $table->integer('id_nivel_acceso')->unsigned();
             $table->string('nombre_usuario', 100);
-            $table->string('contrasena', 255);            
+            $table->string('password', 255);            
+            $table->integer('id_personal')->unsigned();     
 
             $table->timestamps();
         });
 		Schema::table('usuarios', function($table) {
-        	$table->foreign('id_nivel_acceso')->references('id_nivel_acceso')->on('niveles_acceso');
+        	$table->foreign('id_nivel_acceso')->references('id')->on('niveles_acceso');
+   		});
+   		Schema::table('usuarios', function($table) {
+        	$table->foreign('id_personal')->references('id')->on('personal');
    		});
 	}
 

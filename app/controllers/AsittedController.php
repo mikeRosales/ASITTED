@@ -10,7 +10,7 @@ class AsittedController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('asitted.login');
+		return View::make('asitted.masterPage');
 	}
 
 	/**
@@ -98,5 +98,14 @@ class AsittedController extends \BaseController {
 	}
 	public function regProdTerminado(){
 		return View::make('asitted.registroProductoTerminado');
+	}
+	public function empaquePorEnviar(){
+		return View::make('asitted.empaquePorEnviar');
+	}
+	public function registroTaller(){
+		return View::make('asitted.registroTaller');
+	}
+	public function salidaMateriaPrima(){
+		return View::make('asitted.salidaMateriaPrima');
 	}
 }

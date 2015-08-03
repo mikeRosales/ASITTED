@@ -14,7 +14,7 @@ class CreateEntradaMatPrimaTable extends Migration {
 	{
 		Schema::create('recepcion_mat_prima', function(Blueprint $table)
 		{
-			$table->increments('id_item');
+			$table->increments('id');
 
 			$table->string('nombre', 100);
 			$table->integer('unidad');

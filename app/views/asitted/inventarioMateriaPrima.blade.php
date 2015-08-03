@@ -72,6 +72,8 @@
     @endforeach
  
 </section>
-
+      <script>
+      $(document).foundation();
+    </script>
   </body>
 </html>

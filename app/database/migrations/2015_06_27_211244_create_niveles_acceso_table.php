@@ -14,7 +14,7 @@ class CreateNivelesAccesoTable extends Migration {
 	{
 		Schema::create('niveles_acceso', function(Blueprint $table)
 		{
-			$table->increments('id_nivel_acceso');
+			$table->increments('id');
 			$table->string('nombre_nivel', 100);
 		});
 	}

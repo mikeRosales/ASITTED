@@ -14,7 +14,7 @@ class CreateProductosTerminadosTable extends Migration {
 	{
 		Schema::create('productos_terminados', function(Blueprint $table)
 		{
-			$table->increments('id_producto');
+			$table->increments('id');
 
 			$table->integer('num_bolsa');
         	$table->integer('num_bulto');
@@ -27,7 +27,7 @@ class CreateProductosTerminadosTable extends Migration {
             $table->timestamps();
         });
         Schema::table('productos_terminados', function($table) {
-        	$table->foreign('id_taller')->references('id_taller')->on('talleres');
+        	$table->foreign('id_taller')->references('id')->on('talleres');
    		});
 	}
 

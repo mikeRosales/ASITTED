@@ -37,7 +37,7 @@
         </thead>
         <tbody> 
             @foreach($productos as $key => $value)
-            <tr class="openModal" data-reveal-id="{{$value->nombre}}">                    
+            <tr class="openModal" data-reveal-id="modal_{{$value->id_producto}}">                    
               <td>{{ $value->nombre }}</td>
               <td>{{ $value->id_taller }}</td>
               <td>{{ $value->tipo }}</td>                  
@@ -50,7 +50,7 @@
     </div>
   </div>
      @foreach($productos as $key => $value)
-  <div id="{{$value->nombre}}" class="reveal-modal reveal-custom medium" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <div id="modal_{{$value->id_producto}}" class="reveal-modal reveal-custom medium" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
     <section class="pop-head">
       <label>Detalle del Elemento</label>
     </section>
@@ -82,5 +82,8 @@
   </div>
       @endforeach  
 </section>   
+    <script>
+      $(document).foundation();
+    </script>
   </body>
 </html>
