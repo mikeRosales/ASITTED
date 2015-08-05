@@ -1,15 +1,4 @@
 @include('asitted.recursos')
- @if($errors->has())
-   @foreach ($errors->all() as $error)
-      <div><small class="error">{{ $error }}</small></div>
-  @endforeach
-@endif
-@if(Session::has('success'))
-    <div class="alert-box">
-       <small> {{ Session::get('success') }}</small>
-    </div>
-@endif
-
 <section id="salidaMateriaPrima">
 	<div class="row">
      {{ Form::open(array('url' => '/salidaMateriaPrima')) }}

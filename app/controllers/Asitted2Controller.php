@@ -53,7 +53,7 @@ class Asitted2Controller extends \BaseController {
 	public function nuevaMateriaPrima(){
 			$rules = array(
 			'nombre'	       => 'required',
-			'unidad'				=> 'required|numeric',
+			'unidad'				=> 'required',
 			'cantidad'			=> 'required|numeric',
 			'descripcion'		   => 'required',
 			'observaciones'		 => 'required'

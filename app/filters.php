@@ -88,12 +88,5 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
-Route::filter('asitted', function()
-{ 
-	if (Auth::user()->id_nivel_acceso !== '1') {
-		if(Auth::user()->id_nivel_acceso == '2'){
-			return Redirect::to('/'); 	
-		}
-		
-	}
-}); 
+
+ 

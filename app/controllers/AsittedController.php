@@ -53,7 +53,7 @@ class AsittedController extends \BaseController {
 	public function nuevaMateriaPrima(){
 			$rules = array(
 			'nombre'	       => 'required',
-			'unidad'				=> 'required|numeric',
+			'unidad'				=> 'required',
 			'cantidad'			=> 'required|numeric',
 			'descripcion'		   => 'required',
 			'observaciones'		 => 'required'
@@ -128,7 +128,7 @@ class AsittedController extends \BaseController {
 			'via_envio'				=> 'required',
 			'producto'			=> 'required',
 			'cajas'		   => 'required',
-			'unidad'		 => 'required|numeric',
+			'unidad'		 => 'required',
 			'cantidad'		 => 'required|numeric',
 			'descripcion'		 => 'required',
 			'corte'		 => 'required',

@@ -36,17 +36,4 @@ Route::group(array('before' => 'auth'),function() {
 	Route::post('/envioProductoTerminado','AsittedController@envioProductoTerminado');
 	Route::post('/nuevoTaller','AsittedController@nuevoTaller');
 });
-Route::group(array('before' => 'auth'),function() {
-	Route::get('/index','Asitted2Controller@index');
-	Route::get('/materiaPrima','Asitted2Controller@materiaPrima');
-	Route::get('/productoTerminado','Asitted2Controller@productoTerminado');
-	Route::get('/registroProductoTerminado','Asitted2Controller@regProdTerminado');
-	Route::get('/registroMateriaPrima','Asitted2Controller@regMatPrima');	
-	Route::post('/buscarProductoTerminado','Asitted2Controller@buscarProductoTerminado');
-	Route::get('/camisas','Asitted2Controller@camisas');
-	Route::get('/chamarras','Asitted2Controller@chamarras');
-	Route::get('/pantalones','Asitted2Controller@pantalones');
-	Route::post('/nuevaMateriaPrima','Asitted2Controller@nuevaMateriaPrima');
-	Route::post('/nuevoProductoTerminado','Asitted2Controller@nuevoProductoTerminado');
 
-});

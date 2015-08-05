@@ -7,6 +7,7 @@
     <script src="{{URL::asset('assets/js/vendor/modernizr.js')}}"></script>
 </head>
 <body>
+
     <div class="fixed">
       <nav class="top-bar" data-topbar role="navigation">
         <ul class="title-area">
@@ -18,6 +19,7 @@
         </ul>
 
         <section class="top-bar-section">
+
           <!-- Right Nav Section -->
           <ul class="left">
             <!--<li><a href="#">Right Button Active</a></li>-->
@@ -27,9 +29,10 @@
                 <li><a href="{{ URL::to('/materiaPrima') }}">Almacen de Materia Prima</a></li>
                 <li><a href="{{ URL::to('/productoTerminado') }}">Almacen de Productos Terminados</a></li>
                 <li><a href="{{ URL::to('/registroMateriaPrima') }}">Nuevos Insumos</a></li>
-				<li><a href="{{ URL::to('/registroProductoTerminado') }}">Nuevos Productos Terminados</a></li>
+				        <li><a href="{{ URL::to('/registroProductoTerminado') }}">Nuevos Productos Terminados</a></li>
               </ul>
             </li>
+            @if(Session::get('nivel')== 1)
             <li class="has-dropdown">
               <a href="#">Salidas</a>
               <ul class="dropdown">
@@ -44,6 +47,7 @@
                 
               </ul>
             </li>
+            @endif
           </ul>
            <ul class="right">
            <li class="name"><a>Bienvenido {{Session::get('nombre')}}</a></li>

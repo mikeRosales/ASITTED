@@ -13,16 +13,14 @@ class SessionController extends \BaseController {
 			$nivel=Auth::user()->id_nivel_acceso;
 			$id_personal=Auth::user()->id_personal;
 			$persona=Personal::find($id_personal);
-	
+		
 			Session::put('nombre',$persona->nombres);
-
-			if ($nivel==1) {	
+			Session::put('nivel',$nivel);
+			if ($nivel == 1 || $nivel == 2) {	
 				
 				return Redirect::action('AsittedController@index');
 			}
-			elseif($nivel==2){
-				return Redirect::action('Asitted2Controller@index');
-			}
+
 		}
 		return Redirect::back()->with('error_message', 'Datos incorrectos, vuelve a intentarlo.');
 	}
