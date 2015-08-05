@@ -7,7 +7,16 @@
     <script src="{{URL::asset('assets/js/vendor/modernizr.js')}}"></script>
 </head>
 <body>
-
+ @if($errors->has())
+   @foreach ($errors->all() as $error)
+      <div><small class="error">{{ $error }}</small></div>
+  @endforeach
+@endif
+@if(Session::has('success'))
+    <div class="alert-box">
+       <p> {{ Session::get('success') }}</p>
+    </div>
+@endif
     <div class="fixed">
       <nav class="top-bar" data-topbar role="navigation">
         <ul class="title-area">
