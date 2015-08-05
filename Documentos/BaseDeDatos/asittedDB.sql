@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.7
+-- version 4.3.11
 -- http://www.phpmyadmin.net
 --
--- Servidor: localhost
--- Tiempo de generación: 03-08-2015 a las 20:14:05
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 05-08-2015 a las 22:21:36
 -- Versión del servidor: 5.6.24
 -- Versión de PHP: 5.6.8
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `asitted_db`
 --
+CREATE DATABASE IF NOT EXISTS `asitted_db` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `asitted_db`;
 
 -- --------------------------------------------------------
 
@@ -202,10 +204,10 @@ INSERT INTO `recepcion_mat_prima` (`id`, `nombre`, `unidad`, `cantidad`, `descri
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `salidaMateriaPrima`
+-- Estructura de tabla para la tabla `salidamateriaprima`
 --
 
-CREATE TABLE IF NOT EXISTS `salidaMateriaPrima` (
+CREATE TABLE IF NOT EXISTS `salidamateriaprima` (
   `id` int(11) NOT NULL,
   `id_taller` int(11) NOT NULL,
   `via_envio` text COLLATE utf8_unicode_ci NOT NULL,
@@ -221,15 +223,15 @@ CREATE TABLE IF NOT EXISTS `salidaMateriaPrima` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Truncar tablas antes de insertar `salidaMateriaPrima`
+-- Truncar tablas antes de insertar `salidamateriaprima`
 --
 
-TRUNCATE TABLE `salidaMateriaPrima`;
+TRUNCATE TABLE `salidamateriaprima`;
 --
--- Volcado de datos para la tabla `salidaMateriaPrima`
+-- Volcado de datos para la tabla `salidamateriaprima`
 --
 
-INSERT INTO `salidaMateriaPrima` (`id`, `id_taller`, `via_envio`, `producto`, `cajas`, `unidad`, `cantidad`, `descripcion`, `corte`, `observaciones`, `created_at`, `updated_at`) VALUES
+INSERT INTO `salidamateriaprima` (`id`, `id_taller`, `via_envio`, `producto`, `cajas`, `unidad`, `cantidad`, `descripcion`, `corte`, `observaciones`, `created_at`, `updated_at`) VALUES
 (1, 2, 'Tren', 'camisas polo', 4, 3, 3, 'van 4 cajas', 'polo', 'aqui se envia la merca', '2015-08-03 22:41:09', '2015-08-03 22:41:09');
 
 -- --------------------------------------------------------
@@ -317,8 +319,7 @@ ALTER TABLE `producto_entregado`
 -- Indices de la tabla `productos_terminados`
 --
 ALTER TABLE `productos_terminados`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `productos_terminados_id_taller_foreign` (`id_taller`);
+  ADD PRIMARY KEY (`id`), ADD KEY `productos_terminados_id_taller_foreign` (`id_taller`);
 
 --
 -- Indices de la tabla `recepcion_mat_prima`
@@ -327,9 +328,9 @@ ALTER TABLE `recepcion_mat_prima`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `salidaMateriaPrima`
+-- Indices de la tabla `salidamateriaprima`
 --
-ALTER TABLE `salidaMateriaPrima`
+ALTER TABLE `salidamateriaprima`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -342,9 +343,7 @@ ALTER TABLE `talleres`
 -- Indices de la tabla `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `usuarios_id_nivel_acceso_foreign` (`id_nivel_acceso`),
-  ADD KEY `id_personal` (`id_personal`);
+  ADD PRIMARY KEY (`id`), ADD KEY `usuarios_id_nivel_acceso_foreign` (`id_nivel_acceso`), ADD KEY `id_personal` (`id_personal`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -376,9 +375,9 @@ ALTER TABLE `productos_terminados`
 ALTER TABLE `recepcion_mat_prima`
   MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT de la tabla `salidaMateriaPrima`
+-- AUTO_INCREMENT de la tabla `salidamateriaprima`
 --
-ALTER TABLE `salidaMateriaPrima`
+ALTER TABLE `salidamateriaprima`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `talleres`
@@ -398,14 +397,14 @@ ALTER TABLE `users`
 -- Filtros para la tabla `productos_terminados`
 --
 ALTER TABLE `productos_terminados`
-  ADD CONSTRAINT `productos_terminados_id_taller_foreign` FOREIGN KEY (`id_taller`) REFERENCES `talleres` (`id`);
+ADD CONSTRAINT `productos_terminados_id_taller_foreign` FOREIGN KEY (`id_taller`) REFERENCES `talleres` (`id`);
 
 --
 -- Filtros para la tabla `users`
 --
 ALTER TABLE `users`
-  ADD CONSTRAINT `usuarios_id_nivel_acceso_foreign` FOREIGN KEY (`id_nivel_acceso`) REFERENCES `niveles_acceso` (`id`),
-  ADD CONSTRAINT `usuarios_id_personal` FOREIGN KEY (`id_personal`) REFERENCES `personal` (`id`);
+ADD CONSTRAINT `usuarios_id_nivel_acceso_foreign` FOREIGN KEY (`id_nivel_acceso`) REFERENCES `niveles_acceso` (`id`),
+ADD CONSTRAINT `usuarios_id_personal` FOREIGN KEY (`id_personal`) REFERENCES `personal` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
