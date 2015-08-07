@@ -31,7 +31,7 @@ class AsittedController extends \BaseController {
 	}
 	public function buscarProductoTerminado(){
 		$producto = Input::get('nombre');
-		$resultado = ProductosTerminados::camisas($producto);
+		$resultado = ProductosTerminados::buscar($producto);
 		return View::make('asitted.inventarioProductoTerminado')->with('productos',$resultado);
 	}
 	public function camisas(){
