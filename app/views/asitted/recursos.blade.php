@@ -59,6 +59,7 @@
             @endif
           </ul>
            <ul class="right">
+           <li><a href="{{ URL::to('/logout') }}">Cerrar Sesion</a></li>
            <li class="name"><a>Bienvenido {{Session::get('nombre')}}</a></li>
            </ul>
         </section>

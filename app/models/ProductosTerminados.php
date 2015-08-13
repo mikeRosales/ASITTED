@@ -3,9 +3,9 @@
 class ProductosTerminados extends \Eloquent {
 	protected $table = 'productos_terminados';
 
-		public function scopeBuscar($query,$materia){
+		public function scopeBuscar($query,$producto){
 		$materia = DB::table('productos_terminados')
-			->where('productos_terminados.nombre','LIKE','%'.$materia.'%')
+			->where('productos_terminados.nombre','LIKE','%'.$producto.'%')
 			->get();
 		return ($materia);
 	}

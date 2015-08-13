@@ -14,9 +14,9 @@
     </div>
     <div class="small-12 columns">
       <ul class="breadcrumbs">
-        <li><a href="/camisas">Camisas</a></li>
-        <li><a href="/chamarras">Chamarras</a></li>
-        <li><a href="/pantalones">Pantalones</a></li>
+        <li><a href="camisas">Camisas</a></li>
+        <li><a href="chamarras">Chamarras</a></li>
+        <li><a href="pantalones">Pantalones</a></li>
       </ul>
     </div>
     <div class="small-12 columns">
